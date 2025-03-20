@@ -5,24 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Africa Youth Leaders Medical Alliance</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-aawesome/4.7.0/font-awesome.min.css">
+    <link rel="stylesheet" href="">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <section class="header">
 <nav>
-    <a href="index.html"><img src="img/Screenshot (7).png" width="125"></a>
-    <i class="fa fa-times" onclick="hidemenu()"></i>
+    <a href="index.html"><img src="img/Screenshot (7).png" width="125" alt="Logo"></a>
+    
     <div class="nav_links" id="navlinks">
+        <i class='bx bx-x' onclick="hidemenu()"></i>
         <ul>
-            <li><a href="">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
             <li><a href="about_us.html">ABOUT US</a></li>
-            <li><a href="">ACTIVITY</a></li>
-            <li><a href="">BLOG</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="#Activity">ACTIVITY</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </div>
+    <i class='bx bx-menu' onclick="showmenu()"></i>
 </nav>
-<i class="fa fa-bars" onclick="showmenu()"></i>
+
+<script>
+    var navlinks = document.getElementById("navlinks");
+    var menuIcon = document.querySelector('.bx-menu');
+    var closeIcon = document.querySelector('.bx-x');
+
+    function showmenu() {
+        navlinks.style.right = "0";
+    }
+    function hidemenu() {
+        navlinks.style.right = "-200px";
+    }
+</script>
+
+<style>
+    /* Hide menu and close icons in desktop view */
+    @media (min-width: 700px) {
+        .bx-menu, .bx-x {
+            display: none;
+        }
+        #navlinks {
+            left: 0; /* Ensure nav links are always visible in desktop view */
+            position: static;
+        }
+    }
+
+    /* Show menu and close icons in mobile view */
+    @media (max-width: 700px) {
+        .bx-menu, .bx-x {
+            display: block;
+        }
+        #navlinks {
+            position: absolute;
+            left: 0px;
+            transition: left 0.3s ease;
+        }
+    }
+</style>
 
 <div class="text_box">
     <h1>Afrikan Youth Leaders Medical Alliance</h1>
@@ -137,23 +177,14 @@
 <section class="footer">
     <h4>About Us</h4>
     <p>Practically we stand to unite the upcoming generation with impactable knowledge that will be of usefullness in their life by <br>educating and mentoring them to full potential.</p>
-<div class="icon">
-    <i class="">Twitter</i>
-    <i class="">Youtube</i>
-    <i class="">Whatsapp</i>
-    <i class="">Facebook</i> 
-</div>
-<p>Made with<i class="fa fa-heart-o"></i> by Royal Blue</p>
+    <div class="icon">
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-youtube'></i>
+        <i class='bx bxl-whatsapp'></i>
+        <i class='bx bxl-facebook'></i>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by Royal Blue</p>
 </section>
-<script>
-var navlinks = document.getElementById("navlinks");
 
-function showmenu(){
-    navlinks.style.right= "0";
-}
-function hidemenu(){
-    navlinks.style.right= "-500px";
-}
-</script>
 </body>
 </html>
